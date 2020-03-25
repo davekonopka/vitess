@@ -107,7 +107,7 @@ spec:
 
       initContainers:
 {{ include "init-mysql" (tuple $vitessTag $cellClean $mysqlctld) | indent 8 }}
-{{ include "init-vttablet" (tuple $vitessTag $cell $cellClean $namespace $mysqlctld $vtctl) | indent 8 }}
+{{ include "init-vttablet" (tuple $vitessTag $cell $cellClean $namespace $vtctl) | indent 8 }}
 
       containers:
 {{ include "cont-mysql" (tuple $topology $cell $keyspace $shard $tablet $defaultVttablet $uid) | indent 8 }}
